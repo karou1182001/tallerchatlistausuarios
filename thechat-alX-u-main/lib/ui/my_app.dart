@@ -11,7 +11,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(ChatController());
     Get.put(AuthenticationController());
-
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Firebase demo',

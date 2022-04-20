@@ -1,3 +1,4 @@
+import 'package:f_chat_template/ui/controllers/chat_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -6,6 +7,7 @@ import '../../controllers/authentication_controller.dart';
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);
   AuthenticationController authenticationController = Get.find();
+  ChatController chatController = Get.find();
 
   void signIn() {
     authenticationController.signup('a@a.com', '123456');
@@ -27,13 +29,19 @@ class LoginPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 ElevatedButton(
-                    onPressed: () => login('a@a.com'),
+                    onPressed: () {
+                     login('a@a.com');
+                    },
                     child: const Text("Login A")),
                 ElevatedButton(
-                    onPressed: () => login('b@b.com'),
+                    onPressed: () async {
+                       login('b@b.com');
+                    },
                     child: const Text("Login B")),
                 ElevatedButton(
-                    onPressed: () => login('c@c.com'),
+                    onPressed: () {
+                      login('c@c.com');
+                    },
                     child: const Text("Login C")),
                 ElevatedButton(onPressed: signIn, child: const Text("Sign in")),
               ]),

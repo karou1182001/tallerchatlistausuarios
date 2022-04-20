@@ -1,7 +1,9 @@
+import 'package:f_chat_template/ui/controllers/chat_controller.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
 class AuthenticationController extends GetxController {
+  ChatController chatController = Get.find();
   Future<void> login(email, password) async {
     try {
       await FirebaseAuth.instance
@@ -19,7 +21,9 @@ class AuthenticationController extends GetxController {
   Future<void> signup(email, password) async {
     try {
       await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(email: email, password: password);
+          .createUserWithEmailAndPassword(email: email, password: password)
+          .then((userCredential) => chatController.writeData(
+              userCredential.user!.email!, userCredential.user!.uid));
       return Future.value();
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
