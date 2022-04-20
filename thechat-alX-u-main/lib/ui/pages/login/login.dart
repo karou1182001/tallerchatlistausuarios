@@ -11,11 +11,8 @@ class LoginPage extends StatelessWidget {
 
   void signIn() {
     authenticationController.signup('a@a.com', '123456');
-    chatController.writeData('a@a.com', '123456');
     authenticationController.signup('b@b.com', '123456');
-    chatController.writeData('b@b.com', '123456');
     authenticationController.signup('c@c.com', '123456');
-    chatController.writeData('c@c.com', '123456');
   }
 
   void login(String user) {
@@ -32,13 +29,19 @@ class LoginPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 ElevatedButton(
-                    onPressed: () => login('a@a.com'),
+                    onPressed: () {
+                     login('a@a.com');
+                    },
                     child: const Text("Login A")),
                 ElevatedButton(
-                    onPressed: () => login('b@b.com'),
+                    onPressed: () async {
+                       login('b@b.com');
+                    },
                     child: const Text("Login B")),
                 ElevatedButton(
-                    onPressed: () => login('c@c.com'),
+                    onPressed: () {
+                      login('c@c.com');
+                    },
                     child: const Text("Login C")),
                 ElevatedButton(onPressed: signIn, child: const Text("Sign in")),
               ]),

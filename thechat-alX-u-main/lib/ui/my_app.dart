@@ -9,8 +9,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(AuthenticationController());
     Get.put(ChatController());
+    Get.put(AuthenticationController());
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Firebase demo',
