@@ -30,12 +30,12 @@ class LoginPage extends StatelessWidget {
               children: [
                 ElevatedButton(
                     onPressed: () {
-                     login('a@a.com');
+                      login('a@a.com');
                     },
                     child: const Text("Login A")),
                 ElevatedButton(
                     onPressed: () async {
-                       login('b@b.com');
+                      login('b@b.com');
                     },
                     child: const Text("Login B")),
                 ElevatedButton(
