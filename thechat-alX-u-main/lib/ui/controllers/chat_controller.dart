@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:f_chat_template/ui/controllers/authentication_controller.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -22,6 +23,12 @@ class ChatController extends GetxController {
         .set({'email': email, 'uid': uid});
   }
 
+  // void readData() {
+  //   databaseRef.child('Usuario').get().then((DataSnapshot snapshot) {
+  //     print('Data : ${snapshot.value}');
+
+  //   });
+  // }
   void readData() {
     databaseRef.child('Usuario').get().then((DataSnapshot snapshot) {
       print('Data : ${snapshot.value}');
