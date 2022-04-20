@@ -15,6 +15,7 @@ class LoginPage extends StatelessWidget {
 
   void login(String user) {
     authenticationController.login(user, '123456');
+    print('Funciona');
   }
 
   @override
