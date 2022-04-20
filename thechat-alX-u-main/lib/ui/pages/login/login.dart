@@ -1,4 +1,5 @@
 import 'package:f_chat_template/ui/controllers/chat_controller.dart';
+import 'package:f_chat_template/ui/model/user.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,6 +18,7 @@ class LoginPage extends StatelessWidget {
 
   void login(String user) {
     authenticationController.login(user, '123456');
+    chatController.readData();
     print('Funciona');
   }
 
