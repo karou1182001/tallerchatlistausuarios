@@ -1,3 +1,4 @@
+import 'package:f_chat_template/ui/controllers/chat_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -6,11 +7,15 @@ import '../../controllers/authentication_controller.dart';
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);
   AuthenticationController authenticationController = Get.find();
+  ChatController chatController = Get.find();
 
   void signIn() {
     authenticationController.signup('a@a.com', '123456');
+    chatController.writeData('a@a.com', '123456');
     authenticationController.signup('b@b.com', '123456');
+    chatController.writeData('b@b.com', '123456');
     authenticationController.signup('c@c.com', '123456');
+    chatController.writeData('c@c.com', '123456');
   }
 
   void login(String user) {

@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
 class AuthenticationController extends GetxController {
+
   Future<void> login(email, password) async {
     try {
       await FirebaseAuth.instance
